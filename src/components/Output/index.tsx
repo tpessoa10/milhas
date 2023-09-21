@@ -1,11 +1,12 @@
 interface OutputProps{
     text:any
+    resultado: number
 }
 
-export default function Output({text}:OutputProps){
+export default function Output({text, resultado}:OutputProps){
     return (
         <div>
-            <p>{text}</p>
+            <p>{text}: <span>{resultado}</span></p>
         </div>
     )
 }
