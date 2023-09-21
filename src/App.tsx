@@ -17,7 +17,6 @@ function App() {
   const [precoMilheiroEfetivo, setPrecoMilheiroEfetivo] = useState<number>(0)
   const [checkboxValue, setCheckboxValue] = useState(false)
   const [exibirResultado, setExibirResultado] = useState(false)
-  console.log(checkboxValue)
 
   const handleCalcular = () => {
     let bonus = +valorBonus
@@ -40,34 +39,36 @@ function App() {
   
 
   return (
-  <>
+  
+    <>
     <Header/>
-    <Input tipo='number' nome='Valor do milheiro' onChange={setValorMilha}/>
-    <Input tipo='number' nome='Valor do desconto' onChange={setValorDesconto}/>
-    <Input tipo='number' nome='Valor do bônus' onChange={setValorBonus}/>
-    <Checkbox onChange={(e) => setCheckboxValue(e.target.checked)}/>
-    {checkboxValue && 
-      <p>Assinantes Clubem recebem mais 5% de desconto e 30% de bonus</p>
-    }
-    <Button onClick={handleCalcular}/>
-    {exibirResultado && <div>
-      <Output text="Valor com desconto" resultado={valorComDesconto}/>
-      <Output text="Preço milheiro" resultado={precoMilheiroEfetivo}/>{
-        precoMilheiroEfetivo <= 15.40 &&
-        <p>Compra excelente</p>
+    <div className='div-principal'>
+      <Input tipo='number' nome='Valor do milheiro' onChange={setValorMilha}/>
+      <Input tipo='number' nome='Valor do desconto' onChange={setValorDesconto}/>
+      <Input tipo='number' nome='Valor do bônus' onChange={setValorBonus}/>
+      <Checkbox onChange={(e) => setCheckboxValue(e.target.checked)}/>
+      {checkboxValue && 
+        <p>Assinantes Clubem recebem mais 5% de desconto e 30% de bonus</p>
       }
-      {
-        precoMilheiroEfetivo >= 15.40 && precoMilheiroEfetivo <= 17.50 &&
-        <p>Compra boa</p>
+      <Button onClick={handleCalcular}/>
+      {exibirResultado && <div>
+        <Output text="Valor com desconto" resultado={valorComDesconto}/>
+        <Output text="Preço milheiro" resultado={precoMilheiroEfetivo}/>{
+          precoMilheiroEfetivo <= 15.40 &&
+          <p>Compra excelente</p>
+        }
+        {
+          precoMilheiroEfetivo >= 15.40 && precoMilheiroEfetivo <= 17.50 &&
+          <p>Compra boa</p>
+        }
+        {
+          precoMilheiroEfetivo > 17.50 &&
+          <p>Compra ruim</p>
+        }
+      </div>
       }
-      {
-        precoMilheiroEfetivo > 17.50 &&
-        <p>Compra ruim</p>
-      }
-    </div>
-    }
-    
-  </>
+  </div>
+</>
   )
 }
 

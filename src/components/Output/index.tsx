@@ -6,7 +6,7 @@ interface OutputProps{
 export default function Output({text, resultado}:OutputProps){
     return (
         <div>
-            <p>{text}: <span>{resultado}</span></p>
+            <p>{text}: <span>{resultado.toFixed(2)}</span></p>
         </div>
     )
 }
