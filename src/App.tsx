@@ -49,7 +49,7 @@ function App() {
     <>
     <Header/>
     <div className='div-principal'>
-      <h1>Calcular Milhas com bônus</h1>
+    <div className="titulo"><h1>Calcular milhas com bônus</h1></div>
       <Input tipo='number' nome='Valor do milheiro' onChange={setValorMilha}/>
       <Input tipo='number' nome='Valor do desconto' onChange={setValorDesconto}/>
       <Input tipo='number' nome='Valor do bônus' onChange={setValorBonus}/>
