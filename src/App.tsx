@@ -1,5 +1,5 @@
 
-
+import styled from 'styled-components'
 import { useState } from 'react'
 import './App.css'
 import Button from './components/Button'
@@ -7,6 +7,14 @@ import Header from './components/Header'
 import Input from './components/Input'
 import Checkbox from './components/Checkbox'
 import Output from './components/Output'
+
+interface PropsCustomizadas{
+  cor:string
+}
+
+const SpanEstilizado = styled.span<PropsCustomizadas>`
+  color:${({cor}) => cor}
+`
 
 function App() {
 
@@ -48,22 +56,22 @@ function App() {
       <Input tipo='number' nome='Valor do bônus' onChange={setValorBonus}/>
       <Checkbox onChange={(e) => setCheckboxValue(e.target.checked)}/>
       {checkboxValue && 
-        <p>Assinantes Clubem recebem mais 5% de desconto e 30% de bonus</p>
+        <p>Assinantes Clube recebem mais 5% de desconto e 30% de bonus</p>
       }
       <Button onClick={handleCalcular}/>
       {exibirResultado && <div>
         <Output text="Valor com desconto" resultado={valorComDesconto}/>
         <Output text="Preço milheiro" resultado={precoMilheiroEfetivo}/>{
           precoMilheiroEfetivo <= 15.40 &&
-          <p>Compra excelente</p>
+          <p>Compra <SpanEstilizado cor="green">Excelente</SpanEstilizado> </p>
         }
         {
           precoMilheiroEfetivo >= 15.40 && precoMilheiroEfetivo <= 17.50 &&
-          <p>Compra boa</p>
+          <p>Compra <SpanEstilizado cor="blue">Boa</SpanEstilizado> </p>
         }
         {
           precoMilheiroEfetivo > 17.50 &&
-          <p>Compra ruim</p>
+          <p>Compra <SpanEstilizado cor='red'>Ruim</SpanEstilizado></p>
         }
       </div>
       }
