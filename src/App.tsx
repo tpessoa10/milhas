@@ -18,9 +18,9 @@ const SpanEstilizado = styled.span<PropsCustomizadas>`
 
 function App() {
 
-  const [valorMilha, setValorMilha] = useState<number >(0)
-  const [valorDesconto, setValorDesconto] = useState(0)
-  const [valorBonus, setValorBonus] = useState(0)
+  const [valorMilha, setValorMilha] = useState <number>(0)
+  const [valorDesconto, setValorDesconto] = useState <number>(0)
+  const [valorBonus, setValorBonus] = useState <number>(0)
   const [valorComDesconto, setValorComDesconto] = useState<number>(0)
   const [precoMilheiroEfetivo, setPrecoMilheiroEfetivo] = useState<number>(0)
   const [checkboxValue, setCheckboxValue] = useState(false)
@@ -33,8 +33,6 @@ function App() {
       bonus += 30
       desconto +=5
     }
-    console.log(bonus)
-    console.log(desconto)
     const porcentagemParaInt = desconto * 0.01
     const valorDoDesconto = valorMilha * porcentagemParaInt
     const valorComDesconto = valorMilha - valorDoDesconto

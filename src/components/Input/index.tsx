@@ -3,7 +3,7 @@ import styles from './Input.module.css'
 interface InputProps{
     tipo: string
     nome: string
-    onChange: (value: number) => void
+    onChange: (value:any) => void
 
 }
 
