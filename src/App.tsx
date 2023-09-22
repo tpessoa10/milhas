@@ -47,7 +47,7 @@ function App() {
   return (
   
     <>
-    <Header/>
+    <Header text='MilhasApp'></Header>
     <div className='div-principal'>
     <div className="titulo"><h1>Calcular milhas com bônus</h1></div>
       <Input tipo='number' nome='Valor do milheiro' onChange={setValorMilha}/>
