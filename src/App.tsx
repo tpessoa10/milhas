@@ -51,6 +51,7 @@ function App() {
     <>
     <Header/>
     <div className='div-principal'>
+      <h1>Calcular Milhas com bônus</h1>
       <Input tipo='number' nome='Valor do milheiro' onChange={setValorMilha}/>
       <Input tipo='number' nome='Valor do desconto' onChange={setValorDesconto}/>
       <Input tipo='number' nome='Valor do bônus' onChange={setValorBonus}/>
@@ -61,7 +62,7 @@ function App() {
       <Button onClick={handleCalcular}/>
       {exibirResultado && <div>
         <Output text="Valor com desconto" resultado={valorComDesconto}/>
-        <Output text="Preço milheiro" resultado={precoMilheiroEfetivo}/>{
+        <Output text="Preço do milheiro" resultado={precoMilheiroEfetivo}/>{
           precoMilheiroEfetivo <= 15.40 &&
           <p>Compra <SpanEstilizado cor="green">Excelente</SpanEstilizado> </p>
         }
@@ -70,8 +71,12 @@ function App() {
           <p>Compra <SpanEstilizado cor="blue">Boa</SpanEstilizado> </p>
         }
         {
-          precoMilheiroEfetivo > 17.50 &&
-          <p>Compra <SpanEstilizado cor='red'>Ruim</SpanEstilizado></p>
+          precoMilheiroEfetivo > 17.50 && precoMilheiroEfetivo <= 35.00 &&
+          <p>Compra <SpanEstilizado cor='orange'>Ruim</SpanEstilizado></p>
+        }
+        {
+          precoMilheiroEfetivo > 35.00 &&
+          <p>Compra <SpanEstilizado cor='red'>Péssima</SpanEstilizado></p>
         }
       </div>
       }

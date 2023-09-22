@@ -1,6 +1,14 @@
+
+
 .form{
-    position: relative;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+
+.label{
+    margin-bottom: 10px;
 }
 
 .input{
@@ -16,9 +24,5 @@
      text-shadow: -50px 0px 0px rgba(66,66,66,.0);
 }
 
-.label{
-    position: absolute;
-    bottom:40px;
-    left: 18px;
-    padding: 5px;
-}
+
+

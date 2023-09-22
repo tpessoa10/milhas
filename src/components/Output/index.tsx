@@ -6,7 +6,7 @@ interface OutputProps{
 export default function Output({text, resultado}:OutputProps){
     return (
         <div>
-            <p>{text}: <span>{resultado.toFixed(2)}</span></p>
+            <p>{text}: <span>R$ {resultado.toFixed(2).replace(".",",")}</span></p>
         </div>
     )
 }

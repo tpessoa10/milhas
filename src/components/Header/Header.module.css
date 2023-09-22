@@ -1,5 +1,4 @@
 .header{
-    background-color: blueviolet;
-    display: flex;
-    justify-content: flex-end;
+    background-color: rgb(149, 58, 235);
+    height: 7vh;
 }
